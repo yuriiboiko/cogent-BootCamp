@@ -1,0 +1,65 @@
+/**
+ * 
+ */
+package com.cogent.assignments.inheritancepolymorphism;
+
+/**
+ * @author  : Yurii Boiko
+ * @Date	: Jan 17, 2023
+ *
+ */
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Instrument ins = new Piano();
+		
+		//down casting 
+		Piano p = (Piano) ins;
+		
+		p.play();
+		ins.play();
+		
+		
+		
+		
+/*
+		Instrument[] instruments= new Instrument[10];
+		instruments[0]= new Guitar();
+		instruments[1]= new Piano();
+		instruments[2]= new Flute();
+		instruments[3]= new Guitar();
+		instruments[4]= new Piano();
+		instruments[5]= new Flute();
+		instruments[6]= new Guitar();
+		instruments[7]= new Piano();
+		instruments[8]= new Flute();
+		instruments[9]= new Piano();
+
+		for(Instrument i: instruments) {//Checking for the polymorphic behavior of play method
+
+			printObjectType(i);
+			i.play();
+			
+		}
+
+		*/
+	}
+	
+	//Use the instanceof operator to print that which object stored at which index of
+	//instrument arra
+	static private void printObjectType(Instrument i) {
+		System.out.print("The data type is ");
+		if(i instanceof Guitar) {
+			System.out.println("Guitar");
+
+		}else if(i instanceof Piano) {
+			System.out.println("Piano");
+
+		}else if(i instanceof Flute) {
+			System.out.println("Flute");
+
+		}
+	}
+
+}

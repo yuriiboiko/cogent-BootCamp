@@ -36,6 +36,9 @@ public class TaskManagerApp {
 			case 3:
 				tasks = TaskDAO.deleteTask(tasks);
 				break;
+			case 4:
+				TaskDAO.searchTask(tasks);
+				break;
 			default:
 				break;
 			}
@@ -73,7 +76,6 @@ public class TaskManagerApp {
 		System.out.println("2 - Update a new task!");
 		System.out.println("3 - Delete a new task!");
 		System.out.println("4 - Search a new task!");
-		System.out.println("5 - Add a new task!");
 		System.out.println("0 - Exit");
 		System.out.println("-------------------------------------");
 		

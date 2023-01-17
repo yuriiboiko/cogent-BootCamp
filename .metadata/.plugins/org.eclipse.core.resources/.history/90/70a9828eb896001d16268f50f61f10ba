@@ -1,0 +1,29 @@
+/**
+ * 
+ */
+package com.cogent.wrapperex;
+
+/**
+ * @author  : Yurii Boiko
+ * @Date	: Jan 17, 2023
+ *
+ */
+public class Main {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int x = 35;
+		
+		Integer y= new Integer(x);
+		
+		int z=y.intValue();
+		System.out.println(x);
+		System.out.println(z);
+
+		
+	}
+
+}

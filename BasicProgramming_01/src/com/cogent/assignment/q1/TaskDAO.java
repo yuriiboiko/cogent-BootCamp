@@ -104,4 +104,24 @@ public class TaskDAO {
 		}
 		return -1;
 	}
+
+	/**
+	 * 
+	 */
+	public static boolean searchTask(Task [] tasks) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the Task id which you would like to Find");
+		int id = sc.nextInt();
+		
+		for(int i =0; i<tasks.length; i++) {
+			if(tasks[i].getTaskId()==id) {
+				System.out.println("Task found at index" + i);
+				return true;
+			}
+		}
+		return false;
+		
+	}
+
 }

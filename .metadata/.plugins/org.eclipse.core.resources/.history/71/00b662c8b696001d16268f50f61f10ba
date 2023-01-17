@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+package com.cogent.assignments.inheritancepolymorphism.q2;
+
+/**
+ * @author  : Yurii Boiko
+ * @Date	: Jan 17, 2023
+ *
+ */
+public class TestCompartment {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
