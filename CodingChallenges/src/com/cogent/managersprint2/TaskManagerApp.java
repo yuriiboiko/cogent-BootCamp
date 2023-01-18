@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.cogent.assignment.q1;
+package com.cogent.managersprint2;
 
 import java.util.Scanner;
 
