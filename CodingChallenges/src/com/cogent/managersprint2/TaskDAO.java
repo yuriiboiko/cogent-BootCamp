@@ -67,7 +67,7 @@ public class TaskDAO {
 	public static Task[] deleteTask(Task [] tasks) {
 		
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter the Task id which you wopuld like to delete");
+		System.out.println("Enter the Task id which you woluld like to delete");
 		int id = sc.nextInt();
 		int index = deleteTaskHelper(tasks, id);
 		
