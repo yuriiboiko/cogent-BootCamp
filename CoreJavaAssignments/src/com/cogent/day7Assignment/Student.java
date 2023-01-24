@@ -2,7 +2,7 @@ package com.cogent.day7Assignment;
 
 import java.util.Scanner;
 
-public class Student {
+public class Student implements Comparable<Student>{
 	private String name;
 	private int rollNo;
 	private int age;
@@ -68,6 +68,29 @@ public class Student {
 		this.address = address;
 	}
 
+	@Override
+	public int compareTo(Student o) {
+        int l1 = name.length();
+        int l2 = o.getName().length();
+        int lmin = Math.min(l1, l2);
+  
+        for (int i = 0; i < lmin; i++) {
+            int str1_ch = (int)name.charAt(i);
+            int str2_ch = (int)o.getName().charAt(i);
+  
+            if (str1_ch != str2_ch) {
+                return str1_ch - str2_ch;
+            }
+        }
+  
+        if (l1 != l2) {
+            return l1 - l2;
+        }
+
+        else {
+            return 0;
+        }
+	}
 
 	
 	
