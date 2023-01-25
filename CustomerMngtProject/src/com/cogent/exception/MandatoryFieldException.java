@@ -6,7 +6,6 @@ public class MandatoryFieldException extends RuntimeException{
 	public MandatoryFieldException(String errorMessage) {
 		super();
 		this.errorMessage = errorMessage;
-	};
-	
+	}
 
 }

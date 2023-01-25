@@ -50,7 +50,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 		
 		Customer cust =new Customer();
 		System.out.println("Please enter customer ID.");
-		String cid =sc.next();
+		String cId =sc.next();
 		System.out.println("Please enter customer name.");
 		String cname =sc.next();
 		System.out.println("Please enter customer email.");
@@ -62,35 +62,15 @@ public class CustomerDAOImpl implements CustomerDAO {
 		int m =sc.nextInt();
 		System.out.println("Year");
 		int y =sc.nextInt();
-		Date dob= new Date(d,m,y);
-		cust.setcName(cname);
-		cust.setcDob(dob);
-		cust.setcEmail(email);
-		cust.setcId(cid);
 		
-		validateMandatoryFiled(dob);
-		validateMandatoryFiled(cust);
+		Date dob= new Date(d,m,y);
+		cust.setcDob(dob);
+		cust.setcName(cname);	
+		cust.setcEmail(email);
+		cust.setcId(cId);
+
 	
 		return cust;
-	}
-	
-	public void validateMandatoryFiled(Customer cust) {
-		if(cust==null) {
-			throw new MandatoryFieldException("Customer object cannot be blank");
-		}else if(cust.getcId()==null) {
-			throw new MandatoryFieldException("Customer id cannot be blank");
-		}
-		else if(cust.getcEmail()==null) {
-			throw new MandatoryFieldException("Customer email cannot be blank");
-		}
-		
-		validateMandatoryFiled(cust.getcDob());
-		
-	}
-	
-	public void validateMandatoryFiled(Date d) {
-		//to do validate the date of birth
-		
 	}
 	
 	@Override
@@ -123,7 +103,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 
 	private void updateHelper(int index) {
 		System.out.println("Please enter new customer ID.");
-		String cid =sc.next();
+		String cId =sc.next();
 		System.out.println("Please enter new customer name.");
 		String cname =sc.next();
 		System.out.println("Please enter new customer email.");
@@ -137,15 +117,15 @@ public class CustomerDAOImpl implements CustomerDAO {
 		int y =sc.nextInt();
 		
 		Date dob = new Date(d,m,y);
-		validateMandatoryFiled(dob);
 
 		Customer cust = new Customer();
-		cust.setcId(cid);
+	
+		
 		cust.setcName(cname);
-		cust.setcDob(dob);
 		cust.setcEmail(email);
-		validateMandatoryFiled(cust);
-					
+		cust.setcId(cId);
+		cust.setcDob(dob);
+	
 		customers[index]=cust;
 		
 	}
