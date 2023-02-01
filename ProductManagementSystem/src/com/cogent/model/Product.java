@@ -21,9 +21,9 @@ public class Product {
 		this.pid = 0001;
 		this.pname = "Default";
 		this.pcat = "Default";
-		this.manufactureDate = new Date(1995, 5, 4);
+		this.manufactureDate = Date.valueOf("1995-05-04");;
 		this.price = 0.0;
-		this.expityDate = new Date(1995, 5, 4);
+		this.expityDate = Date.valueOf("1995-05-04");
 	}
 
 	public Product(int pid, String pname, String pcat, Date manufactureDate, double price, Date expityDate) {

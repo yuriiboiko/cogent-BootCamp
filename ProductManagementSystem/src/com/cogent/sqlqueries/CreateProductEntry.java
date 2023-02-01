@@ -32,10 +32,7 @@ public class CreateProductEntry {
 			else {
 				System.out.println("Failed to add");
 			}
-			
-			con.close();
 			ps.close();
-			
 		} catch (SQLException e) {
 			System.out.println("Error with inserting product into table.");
 			e.printStackTrace();

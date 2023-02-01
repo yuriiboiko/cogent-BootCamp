@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"> 
+
+               
+               
+	<bean id="greet" class="com.cogent.ex1.Greeting">
+	</bean>
+
+	<!--detail>Setter-Based dependency injection</detail-->
+	<bean id="personS" class="com.cogent.ex1.Person">
+		<property name="pId" value="1001"></property>
+		<property name="pName" value="Alex"></property>
+		<property name="pAge" value="100"></property>		
+	</bean>
+
+	<!--detail>Constructor-Based dependency injection </detail-->
+	<bean id="personC" class="com.cogent.ex1.Person">
+		<constructor-arg value="1002"></constructor-arg>	
+		<constructor-arg value="Bob"></constructor-arg>	
+		<constructor-arg value="1000"></constructor-arg>
+		
+			
+	
+	</bean>
+</beans>
+

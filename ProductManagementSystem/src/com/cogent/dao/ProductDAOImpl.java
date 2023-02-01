@@ -6,16 +6,7 @@ import java.util.Scanner;
 
 import com.cogent.model.Product;
 import com.cogent.sqlqueries.*;
-/*
-import com.cogent.sqlqueries.CreateProductEntry;
-import com.cogent.sqlqueries.DeleteQueryByCat;
-import com.cogent.sqlqueries.DeleteQueryByID;
-import com.cogent.sqlqueries.JDBCUtils;
-import com.cogent.sqlqueries.PrintQuery;
-import com.cogent.sqlqueries.SelectQueryByCat;
-import com.cogent.sqlqueries.SelectQueryById;
-import com.cogent.sqlqueries.UpdateQuery;
-*/
+
 public class ProductDAOImpl implements ProductDAO {
 	
 	Connection con=null;
@@ -48,7 +39,8 @@ public class ProductDAOImpl implements ProductDAO {
 		int mMonth = sc.nextInt();
 		System.out.println("Day...");
 		int mDay = sc.nextInt();
-		Date mDate = new Date(mYear, mMonth, mDay);
+		String mDayStr= mYear + "-"+ mMonth+"-"+mDay;
+		Date mDate = Date.valueOf(mDayStr);
 		System.out.println("Enter product experation date.");
 		System.out.println("Year...");
 		int eYear = sc.nextInt();
@@ -56,8 +48,9 @@ public class ProductDAOImpl implements ProductDAO {
 		int eMonth = sc.nextInt();
 		System.out.println("Day...");
 		int eDay = sc.nextInt();
-		Date eDate = new Date(eYear, eMonth, eDay);
-		Product p =new Product(pid, pname, pcat, eDate, price, eDate);
+		String eDayStr= eYear + "-"+ eMonth+"-"+eDay;
+		Date eDate = Date.valueOf(eDayStr);
+		Product p =new Product(pid, pname, pcat, mDate, price, eDate);
 		
 		CreateProductEntry.createProductEntry(con, p);
 		
