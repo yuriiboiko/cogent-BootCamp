@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                          http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+	<bean id="passangerDao"
+		class="com.greatlearning.springaop.example1.PassangerDaoImpl"></bean>
+	<bean id="loggingAspect"
+		class="com.greatlearning.springaop.example1.LoggingAspect"></bean>
+	<aop:config>
+		<aop:aspect id="loggindAspect" ref="loggingAspect">
+			<aop:pointcut id="passangerMethod"
+				expression="execution(* com.greatlearning.springaop.example1.*.*(..))" />
+				<aop:before pointcut-ref="passangerMethod" method="before"/>
+				<aop:after pointcut-ref="passangerMethod" method="after"/>
+		</aop:aspect>
+
+	</aop:config>
+</beans>
