@@ -27,9 +27,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	        return NoOpPasswordEncoder.getInstance();
 	    }
 	    
+	    
 	    @Override
 	    protected void configure(HttpSecurity http) throws Exception {
 	       http.authorizeRequests().antMatchers("/product").permitAll().anyRequest().authenticated().and().httpBasic().and().csrf().disable();
 	    }
+	    
 
 }

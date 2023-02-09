@@ -1,4 +1,4 @@
-package com.greatlearning;
+package com.cogent;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -10,15 +10,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.greatlearning.entity.User;
-import com.greatlearning.repository.UserRepository;
+import com.cogent.entity.User;
+import com.cogent.repository.UserRepository;
 
 @SpringBootApplication
-public class SpringSecurityProjectApplication {
+public class SpringbootJwtSecurityApplication {
+	 @Autowired
+	    private UserRepository repository;
 
-	@Autowired
-	UserRepository repository;
-	 @PostConstruct
+	    @PostConstruct
 	    public void initUsers() {
 	        List<User> users = Stream.of(
 	                new User(101, "yb", "yb", "yb@gmail.com"),
@@ -28,9 +28,9 @@ public class SpringSecurityProjectApplication {
 	        ).collect(Collectors.toList());
 	        repository.saveAll(users);
 	    }
-	 
+
 	public static void main(String[] args) {
-		SpringApplication.run(SpringSecurityProjectApplication.class, args);
+		SpringApplication.run(SpringbootJwtSecurityApplication.class, args);
 	}
 
 }
